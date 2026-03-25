@@ -978,6 +978,141 @@
       width: 0%;
       transition: width 0.1s linear;
     }
+
+    /* ── CODING PROFILES ── */
+    #coding-profiles {
+      background: var(--white);
+    }
+
+    .profiles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .profile-card {
+      background: var(--gray-bg);
+      border-radius: var(--radius);
+      padding: 2.2rem;
+      position: relative;
+      overflow: hidden;
+      border: 0.5px solid var(--gray-light);
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s var(--transition), transform 0.7s var(--transition), box-shadow 0.3s, border-color 0.3s;
+    }
+
+    .profile-card.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    .profile-card:hover {
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.06);
+      border-color: rgba(0, 113, 227, 0.25);
+      transform: translateY(-4px);
+    }
+
+    .profile-card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--gray-light);
+      transition: background 0.3s;
+    }
+
+    .profile-card:hover::after {
+      background: linear-gradient(90deg, var(--accent), var(--green));
+    }
+
+    .profile-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 1.5rem;
+    }
+
+    .profile-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      border: 0.5px solid var(--gray-light);
+    }
+
+    .profile-name {
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      color: var(--black);
+      letter-spacing: -0.01em;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    a.profile-name:hover {
+      color: var(--accent);
+    }
+
+    .profile-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .stat-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.9rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 0.5px solid var(--gray-light);
+    }
+
+    .stat-row:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .stat-label {
+      color: var(--gray-mid);
+      font-weight: 500;
+    }
+
+    .stat-value {
+      color: var(--black);
+      font-weight: 600;
+      font-family: 'Courier New', monospace;
+      font-size: 0.95rem;
+    }
+
+    .stat-value.highlight {
+      color: var(--accent);
+    }
+
+    .profile-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 1.2rem;
+    }
+
+    .profile-badge {
+      font-size: 0.72rem;
+      padding: 4px 10px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      border-radius: 20px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
   </style>
 </head>
 
@@ -994,6 +1129,7 @@
       <li><a href="#skills">Skills</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#projects">Projects</a></li>
+      <li><a href="#coding-profiles">Profiles</a></li>
       <li><a href="#achievements">Achievements</a></li>
       <li><a href="#education">Education</a></li>
       <li><a class="nav-cta" href="#contact">Contact</a></li>
@@ -1306,6 +1442,159 @@
     </div>
   </section>
 
+  <!-- CODING PROFILES -->
+  <section id="coding-profiles">
+    <div class="container">
+      <p class="section-label reveal">Coding Profiles</p>
+      <h2 class="section-title reveal">Code, logic,<br>and consistency.</h2>
+      <div class="profiles-grid">
+
+        <!-- LeetCode -->
+        <div class="profile-card">
+          <div class="profile-header">
+            <div class="profile-icon">👨‍💻</div>
+            <a href="https://leetcode.com/u/6t42819x70" target="_blank" rel="noopener" class="profile-name">LeetCode
+              ↗</a>
+          </div>
+          <div class="profile-stats">
+            <div class="stat-row">
+              <span class="stat-label">Problems Solved</span>
+              <span class="stat-value highlight">251</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-label">Difficulty</span>
+              <span class="stat-value" style="font-size: 0.8rem;">E:116 / M:115 / H:20</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-label">Active Days</span>
+              <span class="stat-value">174</span>
+            </div>
+          </div>
+          <div class="profile-badges">
+            <span class="profile-badge">50 Days Badge 2024</span>
+            <span class="profile-badge">100 Days Badge 2024</span>
+          </div>
+        </div>
+
+        <!-- CodeChef -->
+        <div class="profile-card">
+          <div class="profile-header">
+            <div class="profile-icon">👨‍🍳</div>
+            <a href="https://www.codechef.com/users/bhavishyaverma" target="_blank" rel="noopener"
+              class="profile-name">CodeChef ↗</a>
+          </div>
+          <div class="profile-stats">
+            <div class="stat-row">
+              <span class="stat-label">Problems Solved</span>
+              <span class="stat-value highlight">125</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-label">Rating</span>
+              <span class="stat-value">1049</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-label">Global Rank</span>
+              <span class="stat-value">16,103</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- HackerRank -->
+        <div class="profile-card">
+          <div class="profile-header">
+            <div class="profile-icon">⚡</div>
+            <a href="https://www.hackerrank.com/profile/bhavishyaver50" target="_blank" rel="noopener"
+              class="profile-name">HackerRank ↗</a>
+          </div>
+          <div class="profile-stats">
+            <div class="stat-row">
+              <span class="stat-label">Problems Solved</span>
+              <span class="stat-value highlight">83</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-label">Problem Solving</span>
+              <span class="stat-value">35</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-label">Java / Python</span>
+              <span class="stat-value">18 / 10</span>
+            </div>
+          </div>
+          <div class="profile-badges">
+            <span class="profile-badge">Java (Basic)</span>
+            <span class="profile-badge">Python (Basic)</span>
+          </div>
+        </div>
+
+        <!-- GeeksForGeeks -->
+        <div class="profile-card">
+          <div class="profile-header">
+            <div class="profile-icon">🤓</div>
+            <a href="https://www.geeksforgeeks.org/user/bhavishyxhon" target="_blank" rel="noopener"
+              class="profile-name">GeeksForGeeks ↗</a>
+          </div>
+          <div class="profile-stats">
+            <div class="stat-row">
+              <span class="stat-label">Problems Solved</span>
+              <span class="stat-value highlight">79</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-label">DSA</span>
+              <span class="stat-value">74</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-label">Difficulty</span>
+              <span class="stat-value" style="font-size: 0.8rem;">E:31 / M:42 / H:1</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CodeForces -->
+        <div class="profile-card">
+          <div class="profile-header">
+            <div class="profile-icon">📊</div>
+            <a href="https://codeforces.com/profile/bhavishyaverma1" target="_blank" rel="noopener"
+              class="profile-name">CodeForces ↗</a>
+          </div>
+          <div class="profile-stats">
+            <div class="stat-row">
+              <span class="stat-label">Problems Solved</span>
+              <span class="stat-value highlight">4</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-label">Rating</span>
+              <span class="stat-value">605</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-label">Rank</span>
+              <span class="stat-value">Newbie</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- AtCoder -->
+        <div class="profile-card">
+          <div class="profile-header">
+            <div class="profile-icon">🗼</div>
+            <a href="https://atcoder.jp/users/bhavishyaverma" target="_blank" rel="noopener"
+              class="profile-name">AtCoder ↗</a>
+          </div>
+          <div class="profile-stats">
+            <div class="stat-row">
+              <span class="stat-label">Problems Solved</span>
+              <span class="stat-value highlight">4</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-label">Rating</span>
+              <span class="stat-value">15</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- ACHIEVEMENTS -->
   <section id="achievements">
     <div class="container">
@@ -1331,11 +1620,17 @@
 
       <p class="section-label" style="color:rgba(255,255,255,0.4); margin-bottom: 1rem;">Certifications</p>
       <div class="cert-strip">
-        <div class="cert-pill"><span class="cert-dot"></span>Privacy & Security in Online Social Media — NPTEL (Oct
-          2025)</div>
-        <div class="cert-pill"><span class="cert-dot"></span>Python (Basic) — HackerRank (Apr 2025)</div>
-        <div class="cert-pill"><span class="cert-dot"></span>Python & Flask Framework — Udemy (Jan 2024)</div>
-        <div class="cert-pill"><span class="cert-dot"></span>Android App Development — InfoTech Clinic (Jun 2025)</div>
+        <a href="https://drive.google.com/file/d/1Mh9Prp83Hx7i4yARALj-NcPZR6daJ-Dp/view" target="_blank" rel="noopener"
+          class="cert-pill" style="text-decoration:none;"><span class="cert-dot"></span>Privacy & Security in Online
+          Social Media — NPTEL (Oct 2025)</a>
+        <a href="https://www.hackerrank.com/certificates/011395373013" target="_blank" rel="noopener" class="cert-pill"
+          style="text-decoration:none;"><span class="cert-dot"></span>Python (Basic) — HackerRank (Apr 2025)</a>
+        <a href="https://www.udemy.com/certificate/UC-4ee1651f-779a-475b-bfa1-c8d07672fb2e/" target="_blank"
+          rel="noopener" class="cert-pill" style="text-decoration:none;"><span class="cert-dot"></span>Python & Flask
+          Framework — Udemy (Jan 2024)</a>
+        <a href="https://drive.google.com/file/d/1xOuAUBvjx06d7-NHOqUk-aC269C_i7Hr/view" target="_blank" rel="noopener"
+          class="cert-pill" style="text-decoration:none;"><span class="cert-dot"></span>Android App Development —
+          InfoTech Clinic (Jun 2025)</a>
       </div>
     </div>
   </section>
@@ -1476,7 +1771,7 @@
       });
     }, { threshold: 0.12 });
 
-    document.querySelectorAll('.reveal, .exp-card, .project-card, .achieve-card, .edu-item').forEach(el => {
+    document.querySelectorAll('.reveal, .exp-card, .project-card, .achieve-card, .edu-item, .profile-card').forEach(el => {
       observer.observe(el);
     });
 
@@ -1499,6 +1794,9 @@
       card.style.transitionDelay = (i * 0.12) + 's';
     });
     document.querySelectorAll('.achieve-card').forEach((card, i) => {
+      card.style.transitionDelay = (i * 0.1) + 's';
+    });
+    document.querySelectorAll('.profile-card').forEach((card, i) => {
       card.style.transitionDelay = (i * 0.1) + 's';
     });
   </script>
